@@ -1,8 +1,8 @@
 <img src="https://raw.github.com/hennevogel/charon/master/app/assets/images/charon_logo.png" width="64px" style="float:left;"> a planet like feed aggregator
 ======================================
-Charon is intented for communites of people, institutions or companies who blog. It
-aggregates all the feeds of the community into a single feed all the participants can
-read to stay informed.
+Charon ([ˈʃærən](http://en.wikipedia.org/wiki/Help:IPA_for_English#Key)) is intented for
+communites of people, institutions or companies who blog. It aggregates all the feeds of
+the community into a single feed which all the participants can read to stay informed.
 
 It's concept, a proven and poular communication method of the Free and Open Source
 Software community, and basic functionality is borrowed from the software
