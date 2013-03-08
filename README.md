@@ -12,8 +12,10 @@ categories and personalized feeds.
 
 Contribute
 ----------
-Charon is Free Software, if you have code to contribute just fork the repo and send
+Charon is Free Software (MIT), if you have code to contribute just fork the repo and send
 pull-requests. If you have problems installing or using Charon use the
 [issues tab](https://github.com/hennevogel/charon/issues).
+
+You can track what we're currently working on at our [trello boards](https://trello.com/charon)
 
 :heart: Let's work together! :heart:
