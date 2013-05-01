@@ -1,4 +1,22 @@
 Charon::Application.routes.draw do
+
+  resources :feeds
+
+
+  resources :posts
+
+
+  get "home/index"
+
+  resources :users
+
+  match '/auth/:provider/callback', :to => 'account#callback'
+  match '/auth/failure', :to => 'account#failure'
+
+  match ':controller/:action' => ":controller#:action"
+
+  root :to => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

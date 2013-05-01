@@ -1,0 +1,70 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to({:controller => "home"}, {:name => "top", :class => "brand"}) do
+        %i.icon-home.icon-2x
+      .nav-collapse.collapse
+        %ul.nav
+          %li
+            = link_to(:controller => "home", :action => "index") do
+              %i.icon-home.icon-2x
+          %li.divider-vertical
+          %li
+            = link_to(:controller => "home", :action => "index") do
+              %i.icon-home.icon-2x
+          %li.divider-vertical
+          / Simple login button only visible on phones/tablets.
+          / On desktop login is handled as dropdown below.
+          - unless @current_user
+            %li.hidden-desktop
+              = link_to("/auth/google") do
+                %i.icon-signin.icon-2x
+                Sign In
+          - if @current_user
+            %li.hidden-desktop
+              = link_to(:controller => "users", :action => "me") do
+                %i.icon-home.icon-2x
+                = @current_user.name
+            %li.divider-vertical.hidden-desktop
+            %li.hidden-desktop
+              = link_to(:controller => "users", :action => "show", :id => @current_user.id) do
+                %i.icon-globe.icon-2x
+                My Public Profile
+            %li.divider-vertical.hidden-desktop
+            %li.hidden-desktop
+              = link_to(:controller => "account", :action => "logout") do
+                %i.icon-signout.icon-2x
+                Sign Out
+      - unless @current_user
+        %ul.nav.pull-right.visible-desktop
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              %i.icon-user.icon-2x
+              Sign In
+              %i.icon-angle-down
+            .dropdown-menu{:style => "padding: 15px;"}
+              = link_to "Log in with Google", "/auth/google", :class => "btn btn-primary btn-block"
+      - if @current_user
+        %ul.nav.pull-right.visible-desktop
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              = image_tag(@current_user.gravatar_url(:size => "32"), :class => "img-rounded pull-left", :title => "#{@current_user.name}", :alt => @current_user.name)
+              %i.icon-angle-down
+            %ul.dropdown-menu{:style => "padding: 15px;"}
+              %li
+                = link_to(:controller => "users", :action => "show", :id => @current_user.id) do
+                  %i.icon-home
+                  My Profile
+              %li.divider
+              %li
+                = link_to(:controller => "account", :action => "logout") do
+                  %i.icon-share
+                  Log out
+      / /.nav-collapse
+    / /.container-fluid
+  / /.navbar-inner
+/ /.navbar
