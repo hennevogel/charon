@@ -5,16 +5,16 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to({:controller => "home"}, {:name => "top", :class => "brand"}) do
+      = link_to(root_url, {:name => "top", :class => "brand"}) do
         %i.icon-home.icon-2x
       .nav-collapse.collapse
         %ul.nav
           %li
-            = link_to(:controller => "home", :action => "index") do
+            = link_to(root_url) do
               %i.icon-home.icon-2x
           %li.divider-vertical
           %li
-            = link_to(:controller => "home", :action => "index") do
+            = link_to(root_url) do
               %i.icon-home.icon-2x
           %li.divider-vertical
           / Simple login button only visible on phones/tablets.
@@ -26,17 +26,17 @@
                 Sign In
           - if @current_user
             %li.hidden-desktop
-              = link_to(:controller => "users", :action => "me") do
+              = link_to(user_url(@current_user)) do
                 %i.icon-home.icon-2x
                 = @current_user.name
             %li.divider-vertical.hidden-desktop
             %li.hidden-desktop
-              = link_to(:controller => "users", :action => "show", :id => @current_user.id) do
+              = link_to(user_url(@current_user)) do
                 %i.icon-globe.icon-2x
                 My Public Profile
             %li.divider-vertical.hidden-desktop
             %li.hidden-desktop
-              = link_to(:controller => "account", :action => "logout") do
+              = link_to(logout_url) do
                 %i.icon-signout.icon-2x
                 Sign Out
       - unless @current_user
@@ -56,12 +56,12 @@
               %i.icon-angle-down
             %ul.dropdown-menu{:style => "padding: 15px;"}
               %li
-                = link_to(:controller => "users", :action => "show", :id => @current_user.id) do
+                = link_to(user_url(@current_user)) do
                   %i.icon-home
                   My Profile
               %li.divider
               %li
-                = link_to(:controller => "account", :action => "logout") do
+                = link_to(logout_url) do
                   %i.icon-share
                   Log out
       / /.nav-collapse

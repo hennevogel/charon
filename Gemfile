@@ -1,29 +1,71 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.0.0'
+
+# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+
+# Use postgresql for production
 gem 'pg'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', '~> 2.3.0.1'
-  gem 'font-awesome-sass-rails'
-  gem 'uglifier', '>= 1.0.3'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
+
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+
+# Use bootstrap as the front-end framework
+gem 'bootstrap-sass'
+
+# Use font-awesome as scalable vector icons
+gem 'font-awesome-sass-rails'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Use haml as templating language
+gem 'haml-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
 
-gem 'jquery-rails'
-gem 'haml'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
+# Use capybara as test framework
+gem 'capybara', group: [:test]
+
+# Use omniauth as as authentification framework
 gem 'omniauth'
 gem 'omniauth-openid'
 gem 'omniauth-github'
 
+# Use gravtastic for user avatars
 gem 'gravtastic'
-gem "feedzirra", "~> 0.2.0.rc2"
 
-group :test do
-  gem 'capybara'
-  gem 'debugger'
-end
+# Use  feedzirra for parsing RSS feeds
+gem "feedzirra", '~> 0.2.0.rc2'
+
